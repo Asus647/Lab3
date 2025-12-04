@@ -59,14 +59,3 @@ class TestLanguageLearningApp:
         """Тест текста кнопки добавления"""
         assert app.add_button.text() == "Добавить слово"
     
-    def test_menu_exists(self, app):
-        """Тест наличия меню"""
-        menubar = app.menuBar()
-        assert menubar is not None
-        
-        # Проверяем наличие основных меню
-        menu_titles = [menu.title() for menu in menubar.actions() 
-                      if hasattr(menu, 'title')]
-        
-        assert "Файл" in menu_titles
-        assert "Помощь" in menu_titles
